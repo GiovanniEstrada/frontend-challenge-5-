@@ -1,0 +1,80 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+  .main-container {
+    width: 346px;
+    height: 349px;
+    position: relative;
+  }
+
+  .container {
+    background-color: rgb(49, 58, 73);
+    border-radius: 10px;
+    width: 100%;
+    height: calc(100% - 33px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h4 {
+    margin-bottom: 0;
+    color: rgb(66, 156, 121);
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+  }
+
+  h2 {
+    color: rgb(206, 226, 233);
+    font-size: 25px;
+    font-family: "Manrope", sans-serif;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  .btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 66px;
+    height: 66px;
+    background-color: rgb(81, 255, 168);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 600ms ease-in;
+  }
+  .btn:hover {
+    box-shadow: 2px 1px 16px 6px rgba(81, 255, 168, 0.6);
+    -webkit-box-shadow: 2px 1px 16px 6px rgba(81, 255, 168, 0.6);
+    -moz-box-shadow: 2px 1px 16px 6px rgba(81, 255, 168, 0.6);
+  }
+
+  .pattern {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+</style>
+
+<div class="main-container">
+  <div class="container">
+    <h4 class="title">advice # {{ quote?.slip?.id }}</h4>
+    <h2 class="advice">"{{ quote?.slip?.advice }}"</h2>
+  </div>
+  <img
+    src="../../../assets/images/pattern-divider-mobile.svg"
+    alt=""
+    class="pattern"
+  />
+  <div class="random-button">
+    <button class="btn" (click)="refresh()">
+      <img src="../../../assets/images/icon-dice.svg" alt="" />
+    </button>
+  </div>
+</div>
